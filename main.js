@@ -4,7 +4,9 @@
   const colorBg = document.getElementById('bg-color');
   const colorSt = document.getElementById('color_3');
   const colorLg = document.getElementById('color_6');
-  {
+  const btnAll = document.querySelectorAll('button');
+
+{
   const colorn = [0,3,6,9,"C","F"];
   const array = [];
 
@@ -18,6 +20,16 @@
   } else {
     colorBg.style.color = "#fff";
   }
+
+  btnAll.forEach(function(a){
+    if(isNaN(array[1])) {
+      a.style.color = "#333";
+      a.style.border = "1px solid #333";
+    } else {
+      a.style.color = "pink";
+      a.style.border = "1px solid pink";
+    }
+  });
 
   function colorArray() {
     colorCode.innerHTML = array.join('');
