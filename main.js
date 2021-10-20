@@ -57,12 +57,16 @@ function CopyToClipboard1() {
   colorSt.select();
   document.execCommand("Copy");
 
-  alert("copied! : " + colorSt.value);
+  const tooltip1 = document.getElementById("tooltip1");
+  tooltip1.innerHTML = "Copied!";
+  tooltip1.style = "opacity:1;"
 }
 
 function CopyToClipboard2() {
   colorLg.select();
   document.execCommand("Copy");
-
-  alert("copied! : " + colorLg.value);
+  
+  const tooltip2 = document.getElementById("tooltip2");
+  tooltip2.innerHTML = "Copied!";
+  tooltip2.style = "opacity:1;"
 }

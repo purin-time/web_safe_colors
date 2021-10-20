@@ -7,10 +7,6 @@
     body {
       text-align: center;
     }
-    #bg-color {
-      width: 100%;
-      height: 100vh;
-    }
     h1 {
       padding-top: 100px;
     }
@@ -18,6 +14,7 @@
       background-color: rgba(255, 255, 255, 0.1);
       border-radius: 5px;
       padding: 10px 20px;
+      position: relative;
       margin: 3px;
     }
     input {
@@ -26,8 +23,40 @@
       border-radius: 5px;
       padding: 10px 20px;
     }
+    #bg-color {
+      width: 100%;
+      height: 100vh;
+    }
     #color-change {
       margin-top: 20px;
+    }
+    .tooltiptext {
+      visibility: hidden;
+      width: 50px;
+      background-color: #F99;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 95%;
+      left: 100%;
+      margin-left: -75px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border: 5px solid;
+      border-color: #F99 transparent transparent transparent;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
     }
   </style>
 </head>
@@ -35,15 +64,17 @@
   <div id="bg-color">
     <h1>#<span id="color-code"></span></h1>
 
-    <div>
+    <div class="tooltip">
       <input id="color_3" type="text" readonly>
-      <button type="button" onclick="CopyToClipboard1()" data-toggle="tooltip" data-placement="top" title="コピーする">
+      <button type="button" onclick="CopyToClipboard1()" data-toggle="tooltip" data-placement="top" title="Copy">
+        <span class="tooltiptext" id="tooltip1"></span>
         Copy the text
       </button>
     </div>
-    <div>
+    <div class="tooltip">
       <input id="color_6" type="text" readonly>
-      <button type="button" onclick="CopyToClipboard2()" data-toggle="tooltip" data-placement="top" title="コピーする">
+      <button type="button" onclick="CopyToClipboard2()" data-toggle="tooltip" data-placement="top" title="Copy">
+        <span class="tooltiptext" id="tooltip2"></span>
         Copy the text
       </button>
     </div>
