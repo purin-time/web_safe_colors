@@ -11,7 +11,7 @@
 
     <div class="tooltip">
       <input id="color_3" type="text" readonly>
-      <button type="button" onclick="CopyToClipboard1()" data-toggle="tooltip" data-placement="top" title="Copy">
+      <button id="button1" type="button" onclick="CopyToClipboard1()" data-toggle="tooltip" data-placement="top" title="Copy">
         <span class="tooltiptext" id="tooltip1"></span>
         Copy the text
       </button>
@@ -25,7 +25,7 @@
     </div>
  
     <div>
-      <button id="color-change">Change the picked color</button>
+      <button id="color-change" onclick="location.reload();">Change the picked color</button>
       <p>
         <small>Web colors(216 colors) are displayed randomly.</small>
       </p>
@@ -36,6 +36,6 @@
     <span>made by </span><a href="https://purin-time.github.io/github-pages-with-jekyll/">purin-time</a>
     <span>view on github</span><a href="https://github.com/purin-time/web_safe_colors"><img src="img/GitHub-Mark-32px.png" alt="back to my github page"></a>
   </div>
-  <script src="vanilla.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
