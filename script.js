@@ -1,5 +1,7 @@
 'use strict';
 
+const rColor = document.getElementById('rColor');
+
 const colorBg = document.getElementById('bg-color');
 const colorSt = document.getElementById('color_3');
 const colorLg = document.getElementById('color_6');
@@ -13,13 +15,14 @@ function randomNum() {
   }   
 }
 
-function colorAndBorderStyle() {
+function colorStyle() {
   if (isNaN(array[1])) {
     colorBg.style.color = "#333";
   } else {
     colorBg.style.color = "#fff";
   }
-
+}
+function borderStyle() {
   const btnAll = document.querySelectorAll('button');
   btnAll.forEach(function(a){
     if(isNaN(array[1])) {
@@ -33,9 +36,6 @@ function colorAndBorderStyle() {
 }  
 
 function intoHtml() {
-  //title
-  const colorCode = document.getElementById('color-code');
-  colorCode.innerHTML = array.join('');
   // 6-digit hex color
   const colorArrayLg = ["#", array[0], array[0], array[1], array[1], array[2], array[2]];
   const colorHtLg = colorArrayLg.join('');
@@ -45,12 +45,35 @@ function intoHtml() {
   const colorHt = newArray.join('');
   colorBg.style.background = colorHt;
   colorSt.value = colorHt;
+  //title
+  for(var i = 0; i<newArray.length; i++) {
+    var letter = document.createElement('span');
+    letter.className = "letter";
+    letter.innerHTML = newArray[i];
+    rColor.appendChild(letter);
+  } 
 }
+
+//title animation
+function aLetter() {
+  const list = document.querySelectorAll("#rColor span");
+  for(var i = 0; i<4; i++) {
+    aletter (list, i);
+  }   
+  function aletter (list, i) {
+    setTimeout(function(){
+      list[i].classList.add('show');
+    }, i*300);
+  }
+}
+
 
 function colorMaker() {
   randomNum();
   intoHtml();
-  colorAndBorderStyle();
+  colorStyle();
+  borderStyle();
+  aLetter();
 }
 
 colorMaker();

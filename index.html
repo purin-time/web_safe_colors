@@ -7,29 +7,32 @@
 </head>
 <body>
   <div id="bg-color">
-    <h1>#<span id="color-code"></span></h1>
+    <div class="container">
+      <h1 id="rColor"></h1>
+  
+      <div class="tooltip">
+        <input id="color_3" type="text" readonly>
+        <button id="button1" type="button" onclick="CopyToClipboard1()" data-toggle="tooltip" data-placement="top" title="Copy">
+          <span class="tooltiptext" id="tooltip1"></span>
+          Copy the text
+        </button>
+      </div>
+      <div class="tooltip">
+        <input id="color_6" type="text" readonly>
+        <button type="button" onclick="CopyToClipboard2()" data-toggle="tooltip" data-placement="top" title="Copy">
+          <span class="tooltiptext" id="tooltip2"></span>
+          Copy the text
+        </button>
+      </div>
+   
+      <div>
+        <button id="color-change" onclick="location.reload();">Change the picked color</button>
+        <p>
+          <small>Web colors(216 colors) are displayed randomly 🤍</small>
+        </p>
+      </div>
+    </div>
 
-    <div class="tooltip">
-      <input id="color_3" type="text" readonly>
-      <button id="button1" type="button" onclick="CopyToClipboard1()" data-toggle="tooltip" data-placement="top" title="Copy">
-        <span class="tooltiptext" id="tooltip1"></span>
-        Copy the text
-      </button>
-    </div>
-    <div class="tooltip">
-      <input id="color_6" type="text" readonly>
-      <button type="button" onclick="CopyToClipboard2()" data-toggle="tooltip" data-placement="top" title="Copy">
-        <span class="tooltiptext" id="tooltip2"></span>
-        Copy the text
-      </button>
-    </div>
- 
-    <div>
-      <button id="color-change" onclick="location.reload();">Change the picked color</button>
-      <p>
-        <small>Web colors(216 colors) are displayed randomly.</small>
-      </p>
-    </div>
   </div>
   <hr>
   <div class="footer">

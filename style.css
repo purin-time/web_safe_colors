@@ -1,8 +1,47 @@
 body {
+  position: relative;
   text-align: center;
 }
+.container {
+  animation: fadeIn .5s ease 0s 1 normal;
+  -webkit-animation: fadeIn .5s ease 0s 1 normal;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 376px;
+}
+
+
 h1 {
   padding-top: 100px;
+}
+#rColor span {
+  opacity: 0;
+}
+#rColor span.show {
+  animation: fadeIn .5s ease 0s 1 normal;
+  -webkit-animation: fadeIn .5s ease 0s 1 normal;
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  0% {opacity: 0; top: 10px;}
+  100% {opacity: 1; top: 0;}
+}
+
+@-webkit-keyframes slideIn {
+  0% {opacity: 0; top: 10px;}
+  100% {opacity: 1; top: 0;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 button {
   background-color: rgba(255, 255, 255, 0.1);
